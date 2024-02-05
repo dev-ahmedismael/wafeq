@@ -1,0 +1,103 @@
+<section class="container py-20">
+  <h3 class="text-4xl text-slate-950 text-center">
+    أكثر من 6,000 صاحب عمل ومحاسب <br />
+    محترف يثقون في “وافِق”
+  </h3>
+  <div class="flex flex-col justify-center items-center">
+    <p class="text-center">4.8 متوسط تقييمات العملاء لجودة البرنامج</p>
+    <div
+      class="text-5xl flex gap-5 justify-center p-5 my-5 bg-white rounded-lg shadow-lg w-fit"
+    >
+      <img
+        ngSrc="assets/images/rating.png"
+        alt="Star"
+        width="20"
+        height="20"
+        class="text-orange-500"
+      />
+      <img
+        ngSrc="assets/images/star.png"
+        alt="Star"
+        width="20"
+        height="20"
+        class="text-orange-500"
+      />
+      <img
+        ngSrc="assets/images/star.png"
+        alt="Star"
+        width="20"
+        height="20"
+        class="text-orange-500"
+      />
+      <img
+        ngSrc="assets/images/star.png"
+        alt="Star"
+        width="20"
+        height="20"
+        class="text-orange-500"
+      />
+      <img
+        ngSrc="assets/images/star.png"
+        alt="Star"
+        width="20"
+        height="20"
+        class="text-orange-500"
+      />
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Right Side -->
+    <div class="flex flex-col gap-10">
+      @for (item of rightSide; track item.id; let odd = $odd) { @if (odd) {
+      <div class="flex justify-end">
+        <div class="bg-white shadow-lg rounded-lg p-5 w-60">
+          <p class="text-xl text-slate-950">{{ item.comment }}</p>
+          <p>{{ item.author }}</p>
+        </div>
+      </div>
+      } @else {
+      <div class="flex justify-center">
+        <div class="bg-white shadow-lg rounded-lg p-5 w-60">
+          <p class="text-xl text-slate-950">{{ item.comment }}</p>
+          <p>{{ item.author }}</p>
+        </div>
+      </div>
+      } }
+    </div>
+
+    <!-- Center -->
+    <div class="flex flex-col justify-center items-center text-center">
+      <div>
+        <div class="mb-5">
+          <p class="text-3xl text-slate-950">أكثر من 2 مليون فاتورة</p>
+          <p>يتم إنشائها في وافق كل شهر</p>
+        </div>
+        <div>
+          <p class="text-3xl text-slate-950">أكثر من 1.5 مليار ريال</p>
+          <p>القيمة المفوترة عبر وافِق كل شهر</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left Side -->
+    <div class="flex flex-col gap-10">
+      @for (item of leftSide; track item.id; let odd = $odd) { @if (odd) {
+      <div class="flex justify-start">
+        <div class="bg-white shadow-lg rounded-lg p-5 w-60">
+          <p class="text-xl text-slate-950">{{ item.comment }}</p>
+          <p>{{ item.author }}</p>
+        </div>
+      </div>
+      } @else {
+      <div class="flex justify-center">
+        <div class="bg-white shadow-lg rounded-lg p-5 w-60">
+          <p class="text-xl text-slate-950">{{ item.comment }}</p>
+          <p>{{ item.author }}</p>
+        </div>
+      </div>
+      } }
+    </div>
+  </div>
+</section>

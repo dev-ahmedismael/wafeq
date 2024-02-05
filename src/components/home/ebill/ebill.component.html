@@ -1,0 +1,118 @@
+<section class="py-20 container flex flex-col gap-20">
+  <div class="flex flex-col justify-center items-center gap-5">
+    <div class="px-5 py-1 bg-slate-950 text-white rounded-lg w-fit">
+      <p>الفوترة الإلكترونية</p>
+    </div>
+    <h3 class="text-5xl text-slate-950">إنشاء وتخصيص وإرسال الفواتير بسهولة</h3>
+    <p class="text-3xl">
+      إرسال أي فاتورة أصبح أسهل معنا الآن بخيارات متعددة ومميزات متطورة.
+    </p>
+  </div>
+
+  <!-- E-bills -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div>
+      <p class="text-2xl text-indigo-700">________</p>
+      <p class="text-2xl text-indigo-700">الفواتير والنماذج</p>
+      <p class="text-3xl text-slate-950">
+        إنشاء فواتير سهلة التخصيص حسب احتياجات أعمالك وعلامتك التجارية
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        @for (item of ebillItems; track item.id) {
+        <div>
+          <span class="material-symbols-outlined text-7xl text-indigo-700">
+            {{ item.icon }}
+          </span>
+          <p class="text-indigo-700 text-xl">{{ item.title }}</p>
+          <p>{{ item.description }}</p>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="relative">
+      <img ngSrc="assets/images/invoices.webp" alt="Invoices" fill />
+    </div>
+  </div>
+
+  <!-- Tax Compatibility -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div class="relative">
+      <img ngSrc="assets/images/zakatqr.webp" alt="Zakat" fill />
+    </div>
+    <div class="my-20">
+      <p class="text-xl text-indigo-700">________</p>
+      <p class="text-indigo-700 text-2xl">التوافق مع الهيئات الضريبية</p>
+      <p class="text-slate-950 text-3xl">
+        متوافِق مع هيئة الزكاة والضريبة والجمارك
+      </p>
+      <div class="flex justify-center items-center gap-10">
+        <div>
+          <span class="material-symbols-outlined text-7xl text-indigo-700">
+            editor_choice
+          </span>
+        </div>
+        <p>
+          مع وافق أنشئ فواتير برمز استجابة سريع QR متوافقة مع متطلبات هيئة
+          الزكاة والضريبة في المملكة العربية السعودية.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <div class="bg-white rounded-lg shadow-lg p-5">
+          <img
+            ngSrc="assets/images/zakat.webp"
+            alt="Zakat"
+            width="300"
+            height="150"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div class="flex flex-col justify-center items-center">
+      <div>
+        <p class="text-indigo-700 text-2xl">________</p>
+        <p class="text-indigo-700 text-2xl">المشاركة والمتابعة</p>
+        <p class="text-slate-950 text-4xl">
+          إرسال الفواتير للعملاء بطريقتك المُفضلة
+        </p>
+        <p class="mb-5 text-2xl">
+          تخصيص الرسائل وتنزيلها وعرض الإيصال كملف pdf.
+        </p>
+        <div class="flex gap-5">
+          <div class="mb-3">
+            <img
+              ngSrc="assets/images/gmail.webp"
+              alt="Gmail"
+              width="40"
+              height="40"
+            />
+          </div>
+          <p>إرسال الفاتورة بالبريد الإلكتروني</p>
+        </div>
+        <div class="flex gap-5">
+          <div>
+            <img
+              ngSrc="assets/images/whatsapp.webp"
+              alt="WhatsApp"
+              width="40"
+              height="40"
+            />
+          </div>
+          <p>إرسال الفاتورة عبر Whatsapp</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <img
+        ngSrc="assets/images/whatsapp-mobile.webp"
+        alt="WhatsApp"
+        width="300"
+        height="800"
+      />
+    </div>
+  </div>
+</section>

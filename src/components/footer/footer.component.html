@@ -1,0 +1,39 @@
+<footer class="py-20 container grid grid-cols-4 gap-32">
+  <div class="col-span-2">
+    <img ngSrc="assets/images/logo.png" alt="Logo" width="40" height="40" />
+    <p class="text-black text-xl my-5">
+      نظام محاسبة وفوترة إلكترونية متطور لأصحاب الأعمال والمحاسبين
+    </p>
+    <p>
+      أرسل فواتير وعروض أسعار وأوامر شراء بكل سهولة، وتحكم في المخزون وفي إدارة
+      رواتب الموظفين مع إمكانية إنشاء أكثر من 30 تقريراً مالياً، لتحقق إدارة
+      أفضل لأعمالك.
+    </p>
+    <button
+      class="my-5 bg-indigo-700 text-white py-2 px-10 rounded-lg hover:ring-4 hover:ring-gray-300 hover:bg-indigo-900 flex justify-center items-center"
+    >
+      <span>ابدأ الآن مجاناً</span>
+      <span class="material-symbols-outlined button-arrow">
+        navigate_before
+      </span>
+    </button>
+    <p class="text-sm">14 يوماً تجربة مجانية - بدون بطاقة ائتمان</p>
+  </div>
+  <div>
+    <p class="mb-5 text-black">وافق</p>
+
+    @for (item of appItems; track item.id) {
+    <div class="py-3">
+      <a [routerLink]="item.path" [fragment]="item.section">{{ item.title }}</a>
+    </div>
+    }
+  </div>
+  <div>
+    <p class="mb-5 text-black">التعلم والمساعدة</p>
+    @for (item of helpItems; track item.id) {
+    <div class="py-3">
+      <a [routerLink]="item.path">{{ item.title }}</a>
+    </div>
+    }
+  </div>
+</footer>

@@ -1,0 +1,29 @@
+<section class="bg-blue-950 py-20 flex flex-col gap-20 container">
+  <div class="flex flex-col gap-5 justify-center items-center">
+    <div class="px-5 py-1 rounded-lg bg-white text-blue-950">
+      <p>التعلم والمساعدة</p>
+    </div>
+    <p class="text-white text-4xl">مركز متكامل للمساعدة والمعرفة المحاسبية</p>
+    <p class="text-blue-200 text-2xl">
+      كل ما عليك هو السؤال ونحن جاهزون بالإجابة عبر مركز الدعم ومقالاتنا
+      التعليمية.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    @for (item of items; track item.id) {
+    <div class="flex flex-col justify-center items-center gap-5">
+      <span class="material-symbols-outlined text-7xl text-indigo-500">
+        {{ item.icon }}
+      </span>
+      <p class="text-white text-xl text-center">{{ item.title }}</p>
+      <p class="text-blue-200 text-center">{{ item.description }}</p>
+      <button
+        class="rounded-lg ring-1 ring-gray-300 px-5 py-2 text-white hover:ring-2 hover:ring-indigo-500 hover:shadow-indigo-400"
+      >
+        {{ item.button }}
+      </button>
+    </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,125 @@
+<section
+  class="bg-gray-100 py-20 flex flex-col justify-center items-center gap-10 container"
+>
+  <div class="bg-slate-950 text-white rounded-lg py-1 px-5">
+    <p>إدارة فريق العمل</p>
+  </div>
+  <div>
+    <h3 class="text-4xl text-slate-950 text-center mb-5">
+      كل أعمالك وأفراد فريقك في مكان واحد
+    </h3>
+    <p class="text-2xl text-center">
+      لتنظيم العمل والتعاون بسرعة وفاعلية أكبر وتحقيق أفضل النتائج مع وافِق.
+    </p>
+  </div>
+
+  <!-- One Team -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div>
+      <p class="text-indigo-700 text-2xl">______</p>
+      <p class="text-indigo-700 text-2xl">فريق واحد</p>
+      <p class="text-slate-950 text-4xl mb-5">
+        إدارة كل حسابات الفريق وأدوارهم في مؤسستك والتواصل معهم بكل سهولة
+      </p>
+
+      <div class="flex flex-col gap-5">
+        @for (item of teamItems; track item.id) {
+        <div
+          class="rounded-lg ring-1 ring-gray-300 p-3 hover:bg-indigo-50 cursor-pointer"
+          (click)="setActiveTeamItem(item.id)"
+        >
+          <div class="flex justify-between">
+            <div class="flex justify-center items-center gap-5">
+              <span class="material-symbols-outlined text-indigo-700">
+                {{ item.icon }}
+              </span>
+              <p class="text-indigo-700">{{ item.title }}</p>
+            </div>
+            <span class="material-symbols-outlined"> expand_more </span>
+          </div>
+          @if (activeTeamItem == item.id) {
+          <p>{{ item.description }}</p>
+          }
+        </div>
+        }
+      </div>
+    </div>
+    <div class="flex justify-center items-center">
+      @switch (activeTeamItem) { @case (1) {<img
+        ngSrc="assets/images/team/1.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} @case (1) {<img
+        ngSrc="assets/images/team/1.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} @case (2) {<img
+        ngSrc="assets/images/team/2.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} @case (3) {<img
+        ngSrc="assets/images/team/3.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} @default {<img
+        ngSrc="assets/images/team/1.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} }
+    </div>
+  </div>
+
+  <!-- Business -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-20 w-full">
+    <div class="flex justify-center items-center">
+      @switch (activeBusinessItem) { @case (1) {<img
+        ngSrc="assets/images/business/1.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} @case (2) {<img
+        ngSrc="assets/images/business/2.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} @default {<img
+        ngSrc="assets/images/business/1.webp"
+        alt="Report"
+        width="400"
+        height="400"
+      />} }
+    </div>
+    <div>
+      <p class="text-indigo-700 text-2xl">______</p>
+      <p class="text-indigo-700 text-2xl">الأعمال والفروع</p>
+      <p class="text-slate-950 text-4xl mb-5">كل الأعمال، مكان واحد</p>
+
+      <div class="flex flex-col gap-5">
+        @for (item of businessItems; track item.id) {
+        <div
+          class="rounded-lg ring-1 ring-gray-300 p-3 hover:bg-indigo-50 cursor-pointer w-full"
+          (click)="setActiveBusinessItem(item.id)"
+        >
+          <div class="flex justify-between">
+            <div class="flex justify-center items-center gap-5">
+              <span class="material-symbols-outlined text-indigo-700">
+                {{ item.icon }}
+              </span>
+              <p class="text-indigo-700">{{ item.title }}</p>
+            </div>
+            <span class="material-symbols-outlined"> expand_more </span>
+          </div>
+          @if (activeBusinessItem == item.id) {
+          <p>{{ item.description }}</p>
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

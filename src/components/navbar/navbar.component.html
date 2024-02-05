@@ -1,0 +1,184 @@
+<nav class="bg-white lg:bg-transparent">
+  <div class="container flex justify-between items-center h-full">
+    <div class="flex gap-24 items-center h-full">
+      <!-- Logo -->
+      <a routerLink="/">
+        <img
+          ngSrc="assets/images/logo.png"
+          alt="Logo"
+          width="40"
+          height="40"
+          priority
+        />
+      </a>
+
+      <!-- Navbar Items -->
+      <div class="hidden lg:flex items-center">
+        @for (navItem of navItems; track navItem.id) {
+        <a
+          [routerLink]="navItem.path"
+          [fragment]="navItem.section"
+          routerLinkActive="active"
+          class="py-2 px-5 rounded-lg hover:bg-indigo-100 hover:text-indigo-600"
+          >{{ navItem.title }}</a
+        >
+        }
+        <div
+          id="help"
+          class="relative py-2 px-5 cursor-pointer rounded-lg hover:bg-indigo-100 hover:text-indigo-600 flex justify-center items-center"
+        >
+          <span>التعلم والمساعدة</span>
+          <span class="material-symbols-outlined arrow-down">
+            keyboard_arrow_down
+          </span>
+          <!-- Help Menu -->
+          <div id="help-menu" class="absolute top-full p-5 z-10 w-max">
+            <div class="bg-white rounded-lg p-5 shadow">
+              <div class="grid grid-cols-2 gap-10">
+                @for (item of helpMenu; track item.id) {
+                <div>
+                  <p class="mb-5 text-gray-500">{{ item.title }}</p>
+                  <div>
+                    @for (item of item.items; track item.id) {
+                    <div
+                      class="flex gap-5 hover:bg-indigo-50 p-5 mb-5 rounded-lg"
+                    >
+                      <div>
+                        <img
+                          [ngSrc]="item.icon"
+                          [alt]="item.title"
+                          width="40"
+                          height="40"
+                        />
+                      </div>
+                      <div>
+                        <p class="text-black text-xl">{{ item.title }}</p>
+                        <p class="text-gray-500">{{ item.description }}</p>
+                      </div>
+                    </div>
+                    }
+                  </div>
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Buttons -->
+    <div class="hidden lg:flex gap-5">
+      <div>
+        <button
+          class="hover:bg-white py-1 px-10 rounded-lg hover:ring-4 hover:ring-gray-300 flex justify-center items-center"
+        >
+          <span>تسجيل الدخول</span>
+          <span class="material-symbols-outlined button-arrow">
+            navigate_before
+          </span>
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-indigo-700 text-white py-1 px-10 rounded-lg hover:ring-4 hover:ring-gray-300 hover:bg-indigo-900 flex justify-center items-center"
+        >
+          <span>ابدأ الآن مجاناً</span>
+          <span class="material-symbols-outlined button-arrow">
+            navigate_before
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Button -->
+    <div class="flex items-center h-full lg:hidden">
+      <button (click)="openSidebar()" class="h-fit pt-2">
+        <span class="material-symbols-outlined text-5xl"> menu </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="lg:hidden py-5" [class.open]="isSidebarActive">
+  <!-- Sidebar Header -->
+  <div class="shadow pb-5">
+    <div class="flex justify-between container">
+      <div>
+        <img ngSrc="assets/images/logo.png" alt="Logo" width="40" height="40" />
+      </div>
+      <button class="text-3xl" (click)="closeSidebar()">
+        <span class="material-symbols-outlined"> close </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sidebar Body -->
+  <div class="container">
+    @for (item of navItems; track item.id) {
+    <div class="py-5">
+      <a [routerLink]="item.path" [fragment]="item.section">
+        {{ item.title }}
+      </a>
+    </div>
+    }
+    <div
+      class="py-5 flex justify-between cursor-pointer"
+      (click)="toggleAccordion()"
+    >
+      <p>التعلم والمساعدة</p>
+      <span
+        id="accordion-arrow"
+        class="material-symbols-outlined arrow-down"
+        [class.open-accordion]="isAccordionActive"
+      >
+        keyboard_arrow_down
+      </span>
+    </div>
+    <div id="accordion-menu" [class.open-menu]="isAccordionActive">
+      @for (item of helpMenu; track item.id) {
+      <div>
+        <p class="mb-5">{{ item.title }}</p>
+        <div>
+          @for (item of item.items; track item.id) {
+          <div class="flex gap-5 py-5">
+            <div>
+              <img
+                [ngSrc]="item.icon"
+                [alt]="item.title"
+                width="40"
+                height="40"
+              />
+            </div>
+            <div>
+              <p class="text-black text-xl">{{ item.title }}</p>
+              <p class="text-gray-500">{{ item.description }}</p>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- Login Buttons -->
+    <div class="flex flex-col gap-5">
+      <button
+        class="bg-indigo-700 text-white py-2 px-10 rounded-lg hover:ring-4 hover:ring-gray-300 hover:bg-indigo-900 flex justify-center items-center"
+      >
+        <span>ابدأ الآن مجاناً</span>
+        <span class="material-symbols-outlined button-arrow">
+          navigate_before
+        </span>
+      </button>
+      <button
+        class="hover:bg-white py-2 px-10 rounded-lg hover:ring-4 hover:ring-gray-300 flex justify-center items-center"
+      >
+        <span>تسجيل الدخول</span>
+        <span class="material-symbols-outlined button-arrow">
+          navigate_before
+        </span>
+      </button>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav {
+  height: 70px;
+}
+#help:hover > .arrow-down {
+  transform: rotate(180deg);
+}
+.arrow-down {
+  transition: 0.3s all;
+}
+
+#help:hover > #help-menu {
+  height: max-content;
+  width: max-content;
+  opacity: 1;
+  display: block;
+}
+
+#help-menu {
+  display: none;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.3s all;
+}
+
+aside {
+  width: 0;
+  min-height: 100vh;
+  background-color: white;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s all;
+}
+.open {
+  width: 100%;
+}
+#accordion-arrow {
+  transition: 0.3s all;
+}
+.open-accordion {
+  transform: rotate(180deg);
+}
+#accordion-menu {
+  transition: 0.3s all;
+  height: 0;
+  overflow: hidden;
+}
+.open-menu {
+  height: max-content !important;
+}

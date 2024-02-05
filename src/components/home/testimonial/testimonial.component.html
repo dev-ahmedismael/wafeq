@@ -1,0 +1,55 @@
+<section>
+  <h3 class="text-black text-center text-3xl mb-10">
+    شركات رائدة في المملكة العربية السعودية تثق في وافق
+  </h3>
+
+  <div>
+    <swiper-container
+      slides-per-view="5"
+      speed="500"
+      loop="true"
+      centered-slides="true"
+      autoplay="true"
+      space-between="30"
+    >
+      @for (company of firstRowCompanies; track company.id) {
+      <swiper-slide>
+        <div class="flex justify-center">
+          <div>
+            <img
+              [ngSrc]="company.icon"
+              [alt]="company.title"
+              width="100"
+              height="75"
+            />
+            <p class="text-center">{{ company.title }}</p>
+          </div>
+        </div></swiper-slide
+      >}
+    </swiper-container>
+  </div>
+  <div class="py-20 hidden lg:flex justify-center">
+    <div class="relative">
+      <img
+        ngSrc="assets/images/system_3.webp"
+        alt="System screenshot"
+        width="700"
+        height="300"
+        class="rounded-lg relative z-20 shadow-lg"
+      /><img
+        ngSrc="assets/images/system_1.webp"
+        alt="System screenshot"
+        width="300"
+        height="150"
+        class="rounded-lg absolute -left-52 top-20 z-0 shadow-lg"
+      />
+      <img
+        ngSrc="assets/images/system_2.webp"
+        alt="System screenshot"
+        width="300"
+        height="150"
+        class="rounded-lg absolute -right-52 top-20 z-0 shadow-lg"
+      />
+    </div>
+  </div>
+</section>

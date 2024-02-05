@@ -1,0 +1,21 @@
+<section
+  id="advantages"
+  class="py-20 flex flex-col gap-10 bg-gray-100 text-center container"
+>
+  <h3 class="text-black text-5xl">إدارة أفضل لأعمالك</h3>
+  <p class="text-3xl">
+    كل المميزات التي تحتاجها لمتابعة القيود اليومية والتحكم في الأرباح
+    والمشتريات وصرف رواتب الموظفين وأكثر.
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    @for (advantage of advantages; track advantage.id) {
+    <div>
+      <span class="material-symbols-outlined text-indigo-700 text-5xl">
+        {{ advantage.icon }}
+      </span>
+      <p class="text-2xl text-indigo-700">{{ advantage.title }}</p>
+      <p>{{ advantage.description }}</p>
+    </div>
+    }
+  </div>
+</section>
